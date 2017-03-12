@@ -15,9 +15,9 @@ NodeRED flow for OpenEVSE EV charging station solar PV diversion
 - Once charging has started charge rate will modulate down to min charge rate (default 6A)
 - Charging will not pause once started since it was decided stoping / starting charging causes excess wear on the EVSE and the car
 
+### Eco Mode demo:
 
 ![](MySolar.png)
-
 
 ![](simmulate solar pv.png)
 
