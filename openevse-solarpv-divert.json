@@ -1,8 +1,13 @@
 [
   {
-    "id": "a9343c92.13fea",
+    "id": "183b477c.1c6f49",
+    "type": "tab",
+    "label": "OpenEVSE Solar PV Divert"
+  },
+  {
+    "id": "1a6b5e73.c829e2",
     "type": "inject",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "DEBUG: Simulate  4kw (16.7A)",
     "topic": "solar",
     "payload": "4000",
@@ -10,18 +15,18 @@
     "repeat": "",
     "crontab": "",
     "once": false,
-    "x": 209,
-    "y": 190,
+    "x": 221,
+    "y": 278,
     "wires": [
       [
-        "fbf6db3e.617c78"
+        "5c9c3727.2c7578"
       ]
     ]
   },
   {
-    "id": "95ddea87.f04138",
+    "id": "dbc5e458.393238",
     "type": "inject",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "DEBUG: Simulate  100W (0.42A)",
     "topic": "solar",
     "payload": "100",
@@ -29,75 +34,56 @@
     "repeat": "",
     "crontab": "",
     "once": false,
-    "x": 208,
-    "y": 259,
+    "x": 220,
+    "y": 347,
     "wires": [
       [
-        "fbf6db3e.617c78"
+        "5c9c3727.2c7578"
       ]
     ]
   },
   {
-    "id": "8c0406c9.426988",
+    "id": "ca7a2bed.e41b18",
     "type": "inject",
-    "z": "748c9597.a3803c",
-    "name": "DEBUG: Simulate  1: Eco",
+    "z": "183b477c.1c6f49",
+    "name": "DEBUG: Simulate  1: Normal (fast charge)",
     "topic": "mode",
     "payload": "1",
     "payloadType": "num",
     "repeat": "",
     "crontab": "",
     "once": false,
-    "x": 189,
-    "y": 823,
+    "x": 793,
+    "y": 145,
     "wires": [
       [
-        "72578929.c548e8"
+        "75506195.83d33"
       ]
     ]
   },
   {
-    "id": "bec6108d.5fbda",
+    "id": "5f962ced.5dc4b4",
     "type": "inject",
-    "z": "748c9597.a3803c",
-    "name": "DEBUG: Simulate  2: Eco+",
+    "z": "183b477c.1c6f49",
+    "name": "DEBUG: Simulate  2: Eco",
     "topic": "mode",
     "payload": "2",
     "payloadType": "num",
     "repeat": "",
     "crontab": "",
     "once": false,
-    "x": 187,
-    "y": 856,
+    "x": 741,
+    "y": 178,
     "wires": [
       [
-        "72578929.c548e8"
+        "75506195.83d33"
       ]
     ]
   },
   {
-    "id": "dd6374c.103c188",
+    "id": "666bb2a2.7f51ac",
     "type": "inject",
-    "z": "748c9597.a3803c",
-    "name": "DEBUG: Simulate  3: Normal Charge (default)",
-    "topic": "mode",
-    "payload": "3",
-    "payloadType": "num",
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "x": 248,
-    "y": 892,
-    "wires": [
-      [
-        "72578929.c548e8"
-      ]
-    ]
-  },
-  {
-    "id": "12eaf689.a80cb9",
-    "type": "inject",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "DEBUG: Simulate  4kw use",
     "topic": "use",
     "payload": "4000",
@@ -105,18 +91,18 @@
     "repeat": "",
     "crontab": "",
     "once": false,
-    "x": 188,
-    "y": 459,
+    "x": 200,
+    "y": 547,
     "wires": [
       [
-        "975b23a0.0ff0a"
+        "fe041018.18575"
       ]
     ]
   },
   {
-    "id": "fdf1cbda.f605d8",
+    "id": "43fba5f1.264fbc",
     "type": "inject",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "DEBUG: Simulate  2Kw use",
     "topic": "use",
     "payload": "2000",
@@ -124,18 +110,18 @@
     "repeat": "",
     "crontab": "",
     "once": false,
-    "x": 186,
-    "y": 494,
+    "x": 198,
+    "y": 582,
     "wires": [
       [
-        "975b23a0.0ff0a"
+        "fe041018.18575"
       ]
     ]
   },
   {
-    "id": "d9cac7e7.d0ec08",
+    "id": "3f3105c3.6c35ea",
     "type": "inject",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "DEBUG: Simulate  100W use",
     "topic": "use",
     "payload": "100",
@@ -143,41 +129,41 @@
     "repeat": "",
     "crontab": "",
     "once": false,
-    "x": 196,
-    "y": 529,
+    "x": 208,
+    "y": 617,
     "wires": [
       [
-        "975b23a0.0ff0a"
+        "fe041018.18575"
       ]
     ]
   },
   {
-    "id": "3dbaa5c4.dc9b3a",
+    "id": "56840352.e3390c",
     "type": "function",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Calculate charge current",
-    "func": "\n// Load defaults\nvar vrms = global.get(\"vrms\");\nvar solar = global.get(\"solar\");\nvar use = global.get(\"use\");\nvar excess = global.get(\"excess\");\nvar max_charge_current = global.get(\"max_charge_current\");\nvar min_charge_current = global.get(\"min_charge_current\");\nvar charge_current = max_charge_current;\nvar mode = global.get(\"mode\");\nvar state = global.get(\"state\");\n\n// Get VRMS voltage\nif (msg.topic === \"vrms\") {\n    vrms = msg.payload;\n    global.set(\"vrms\",vrms);\n}\n\n// Get Solar PV gen & Convert to current (A)\nif (msg.topic === \"solar\") {\n    solar = msg.payload / vrms;\n    global.set(\"solar\",solar)\n}\n\n// Get on-site consumption & Convert to current (A)\nif (msg.topic === \"use\") {\n    use = msg.payload / vrms;\n    global.set(\"use\",use)\n}\n\n\n// Eco Mode\nif (mode == 1){\n    if (solar >= min_charge_current){\n        charge_current = solar;\n    }\n    else {\n        charge_current = min_charge_current;\n    }\n}\n\n// Eco+ Mode\nif (mode == 2){\n    excess = solar - use;\n    if (excess >= min_charge_current){\n        charge_current = excess;\n    }\n    else {\n        // Pause charging if no excess current\n        charge_current = 0; \n    }\n}\n\n// Normal Charge\nif (mode == 3){\n    charge_current = max_charge_current;\n}\n\ncharge_current=Math.round(charge_current);\n    \nreturn [{payload: charge_current}, {payload: mode}, {payload:state}];\n",
+    "func": "// Load defaults\nvar vrms = global.get(\"vrms\");\nvar solar = global.get(\"solar\");\nvar use = global.get(\"use\");\nvar excess = global.get(\"excess\");\nvar max_charge_current = global.get(\"max_charge_current\");\nvar min_charge_current = global.get(\"min_charge_current\");\nvar charge_current = max_charge_current;\nvar mode = global.get(\"mode\");\nvar state = global.get(\"state\");\n\n// Get VRMS voltage\nif (msg.topic === \"vrms\") {\n    vrms = msg.payload;\n    global.set(\"vrms\",vrms);\n}\n\n// Get Solar PV gen & Convert to current (A)\nif (msg.topic === \"solar\") {\n    solar = msg.payload / vrms;\n    global.set(\"solar\",solar)\n}\n\n// Get on-site consumption & Convert to current (A)\nif (msg.topic === \"use\") {\n    use = msg.payload / vrms;\n    global.set(\"use\",use)\n}\n\n\n// Normal Charge\nif (mode == 1){\n    charge_current = max_charge_current;\n}\n\n// Eco Mode\nif (mode == 2){\n    excess = solar - use;\n    if (excess >= min_charge_current){\n        charge_current = excess;\n    }\n    else {\n        // If no excess current charge current is 0 (EVSE will reduce charge to minimum charge rate (6A default)\n        charge_current = 0; \n    }\n}\n\n\n\ncharge_current=Math.round(charge_current);\n    \nreturn [{payload: charge_current}, {payload: mode}, {payload:state}];\n",
     "outputs": "3",
     "noerr": 0,
-    "x": 658.6666564941406,
-    "y": 422.6666736602783,
+    "x": 890.1428833007812,
+    "y": 644.8571586608887,
     "wires": [
       [
-        "62c5536f.43d2ec",
-        "59e19785.f166c8"
+        "7eb4a5ce.d5044c",
+        "9f694c75.9c924"
       ],
       [
-        "b231b137.69bfe"
+        "aca2728f.831fc"
       ],
       [
-        "62d329e.5b49ad8"
+        "c064cc0.bada138"
       ]
     ]
   },
   {
-    "id": "e143790f.9d3cc8",
+    "id": "aed3612.19864a",
     "type": "inject",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "DEBUG: Simulate  2kw (8.3A)",
     "topic": "solar",
     "payload": "2000",
@@ -185,98 +171,96 @@
     "repeat": "",
     "crontab": "",
     "once": false,
-    "x": 198,
-    "y": 224,
+    "x": 210,
+    "y": 312,
     "wires": [
       [
-        "fbf6db3e.617c78"
+        "5c9c3727.2c7578"
       ]
     ]
   },
   {
-    "id": "21190907.57c316",
+    "id": "e730a9e3.df5048",
     "type": "comment",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "INPUT SOLAR PV (topic: solar)",
     "info": "Solar PV generation\n\n*Must always be positive*\n\n## Input Options \n\n*Configure as appropriate*\n\n### MQTT\n\n- emonPi MQTT server username: `emonpimqtt` password: `emonpimqtt2016`\n- emonPi default topic `emon/emonpi/power1`\n- emonTx (node 8) default topic `emon/emontx3/power1`\n\n### Emoncms\n\n- Configure node with Host, read API key and feed ID\n- https://emoncms.org",
-    "x": 189,
-    "y": 42,
+    "x": 201,
+    "y": 130,
     "wires": []
   },
   {
-    "id": "8cf81b6f.22cde8",
+    "id": "1d5ce07d.4cd03",
     "type": "comment",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "INPUT CONSUMPTION (topic: use)",
     "info": "Onsite consumption\n\n*Must always be positive*\n\n## Input Options \n\n*Configure as appropriate*\n\n### MQTT\n\n- emonPi MQTT server username: `emonpimqtt` password: `emonpimqtt2016`\n- emonPi default topic `emon/emonpi/power2`\n- emonTx (node 8) default topic `emon/emontx3/power2`\n\n### Emoncms\n\n- Configure node with Host, read API key and feed ID\n- https://emoncms.org",
-    "x": 191,
-    "y": 314,
+    "x": 203,
+    "y": 402,
     "wires": []
   },
   {
-    "id": "b16b4186.7cad6",
+    "id": "c20510dc.44687",
     "type": "comment",
-    "z": "748c9597.a3803c",
-    "name": "INPUT CHARGING MODE (topic: mode)",
-    "info": "",
-    "x": 213,
-    "y": 729,
+    "z": "183b477c.1c6f49",
+    "name": "INPUT: CHARGING MODE (click for more info)",
+    "info": "## 1: Normal Fast Charge (default)\n\n- Charging at maximum rate irrispectic of solar PV output\n\n\n## 2: Eco\n\n- Charging level is moderated to match solar PV production\n- If use (on-site consumption feed) is provided it will be subtracted (excess solar diversion)\n- Charging will not start until available power > min charge rate (default 6A)\n- Once charging has started charge rate will modulate down to min charge rate (default 6A)\n- Charging will not pause once started since it was decided stoping / starting charging causes excess wear on the EVSE and the car\n\n\n\n",
+    "x": 787,
+    "y": 51,
     "wires": []
   },
   {
-    "id": "4f94ba59.662024",
+    "id": "17709422.27699c",
     "type": "comment",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "INPUT VRMS (topic: vrms)",
     "info": "VRMS voltage\n\nDefault 240V if no rms data is received\n\n## Input Options \n\n*Configure as appropriate*\n\n### MQTT\n\n- emonPi MQTT server username: `emonpimqtt` password: `emonpimqtt2016`\n- emonPi default topic `emon/emonpi/vmrs`\n- emonTx (node 8) default topic `emon/emontx3/vrms`\n\n### Emoncms\n\n- Configure node with Host, read API key and feed ID\n- https://emoncms.org",
-    "x": 159,
-    "y": 572,
+    "x": 171,
+    "y": 660,
     "wires": []
   },
   {
-    "id": "62c5536f.43d2ec",
+    "id": "7eb4a5ce.d5044c",
     "type": "debug",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Charging Current debug",
-    "active": false,
+    "active": true,
     "console": "false",
     "complete": "payload",
-    "x": 965,
-    "y": 501,
+    "x": 1241,
+    "y": 677,
     "wires": []
   },
   {
-    "id": "b231b137.69bfe",
+    "id": "aca2728f.831fc",
     "type": "debug",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Mode debug",
     "active": false,
     "console": "false",
     "complete": "payload",
-    "x": 926,
-    "y": 545,
+    "x": 1202,
+    "y": 717,
     "wires": []
   },
   {
-    "id": "2949e944.19fea6",
+    "id": "b254b2ff.a580c",
     "type": "function",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Set charging mode",
     "func": "if (msg.topic === \"mode\"){\n    global.set(\"mode\",msg.payload);\n}\n\nreturn msg;\n",
     "outputs": 1,
     "noerr": 0,
-    "x": 658,
-    "y": 488,
+    "x": 1116,
+    "y": 196,
     "wires": [
-      [
-        "b231b137.69bfe"
-      ]
+      []
     ]
   },
   {
-    "id": "5559d739.e94778",
+    "id": "2ceb94b.cb06a6c",
     "type": "inject",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Inject at startup",
     "topic": "",
     "payload": "",
@@ -284,96 +268,96 @@
     "repeat": "",
     "crontab": "",
     "once": true,
-    "x": 493,
-    "y": 98,
+    "x": 113,
+    "y": 62,
     "wires": [
       [
-        "e48d7d6e.5a731"
+        "203cd05a.46df4"
       ]
     ]
   },
   {
-    "id": "e48d7d6e.5a731",
+    "id": "203cd05a.46df4",
     "type": "function",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Set default values",
-    "func": "// Default to normal charge mode\nglobal.set(\"mode\",3);\n\n// Set min & max charging current (A)\n// If max charge current is greater than the max  \n// allowed current set in OpenEVSE charge rate will be max allowed\nglobal.set(\"max_charge_current\",32);\n\n// 6A min is defined by SAE/IEC standard\nglobal.set(\"min_charge_current\",6);\n\n// Charge current can be varied in 1A increments as defined by SAE/IEC\n\n// Default VRMS voltage\nglobal.set(\"vrms\",240);\n\n\n// Default to 'charging' state unless overwritten\nglobal.set(\"state\",3);\n// 1: Not Connected\n// 2: Connected\n// 3: Charging \n// 4-10: Error \n// 254: Sleeping\n// 255: Disabled\nreturn msg;",
+    "func": "// Default to normal charge mode\nglobal.set(\"mode\",1);\n\n// Set min & max charging current (A)\n// If max charge current is greater than the max  \n// allowed current set in OpenEVSE charge rate will be max allowed\nglobal.set(\"max_charge_current\",32);\n\n// 6A min is defined by SAE/IEC standard\nglobal.set(\"min_charge_current\",6);\n\n// Charge current can be varied in 1A increments as defined by SAE/IEC\n\n// Default VRMS voltage\nglobal.set(\"vrms\",240);\n\n\n// Default to 'charging' state unless overwritten\nglobal.set(\"state\",3);\n// 1: Not Connected\n// 2: Connected\n// 3: Charging \n// 4-10: Error \n// 254: Sleeping\n// 255: Disabled\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
-    "x": 725,
-    "y": 97,
+    "x": 325,
+    "y": 65,
     "wires": [
       []
     ]
   },
   {
-    "id": "9911b61f.85b9b8",
+    "id": "5c69777e.0dc8b8",
     "type": "function",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Generate RAPI",
-    "func": "var rapi_chargerate = \"$SC\";\nvar rapi_pause = \"$FS\";\nvar rapi_resume = \"$FE\";\nvar rapi =\"\";\nvar charge_rate = msg.payload;\nvar state = global.get(\"state\");\n\n// STATE\n// 1: Not Connected\n// 2: Connected\n// 3: Charging \n// 4-10: Error \n// 254: Sleeping\n// 255: Disabled\n\nif ((msg.payload === 0) && (state == 3)){\n    // pause charging if charging & charging rate = 0 \n    // Set sleeping state\n    state = 254;\n    global.set(\"state\",state)\n    rapi = {payload: rapi_pause};\n}\nif (msg.payload !== 0) {\n    if (state == 254){\n        // Resume / start charging if charging is paused\n        rapi = {payload: rapi_resume};\n        // Set charging state\n        state = 3;\n        global.set(\"state\",state)\n        return rapi;\n    }\n    if (state ==3){ \n        // If state==charging (default) set charge rate\n        rapi = {payload: rapi_chargerate + \" \" + charge_rate};\n    }\n}\nreturn rapi;",
+    "func": "var rapi_chargerate = \"$SC\";\nvar rapi_pause = \"$FS\";\nvar rapi_resume = \"$FE\";\nvar rapi =\"\";\nvar charge_rate = msg.payload;\nvar state = global.get(\"state\");\nvar min_charge_rate = global.get(\"min_charge_current\");\nvar mode = global.get(\"mode\");\n\n// STATE\n// 1: Not Connected\n// 2: Connected\n// 3: Charging \n// 4-10: Error \n// 254: Sleeping (or 596?)\n// 255: Disabled\n\n// Dont pause charging since this wears out the EVSE relays \n//if ((msg.payload === 0) && (state == 3)){\n    // pause charging if charging & charging rate = 0 \n    // Set sleeping state\n//    state = 254;\n//    global.set(\"state\",state)\n//    rapi = {payload: rapi_pause};\n//    return rapi;\n//}\n\n// Start charging if EVSE is sleeping and charging current > min charging current\nif ((state == 254) || (state == 596) && (charge_rate > min_charge_rate) && (mode < 1) ){\n    // Resume / start charging if charging is paused (EVSE sleeping)\n    rapi = {payload: rapi_resume};\n    // Set charging state\n    //state = 3; //comment out to use real-time state from EVSE (recomended)\n    //global.set(\"state\",state)\n}\nelse{\n   if (state ==3){ \n       // If state==charging (default) set charge rate\n       rapi = {payload: rapi_chargerate + \" \" + charge_rate};\n   }\n}\n\nreturn rapi;\n",
     "outputs": 1,
     "noerr": 0,
-    "x": 685.2500686645508,
-    "y": 272.2500047683716,
+    "x": 995.0000076293945,
+    "y": 507.0000123977661,
     "wires": [
       [
-        "27b73799.ffe708",
-        "216c1f2f.3fe03"
+        "eb12631b.67a2c",
+        "13a13530.6cff0b"
       ]
     ]
   },
   {
-    "id": "27b73799.ffe708",
+    "id": "eb12631b.67a2c",
     "type": "debug",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "RAPI Debug",
-    "active": true,
+    "active": false,
     "console": "false",
     "complete": "payload",
-    "x": 926,
-    "y": 466,
+    "x": 1220,
+    "y": 629,
     "wires": []
   },
   {
-    "id": "216c1f2f.3fe03",
+    "id": "13a13530.6cff0b",
     "type": "delay",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "",
     "pauseType": "rate",
     "timeout": "5",
     "timeoutUnits": "seconds",
     "rate": "1",
-    "nbRateUnits": "10",
+    "nbRateUnits": "30",
     "rateUnits": "second",
     "randomFirst": "1",
     "randomLast": "5",
     "randomUnits": "seconds",
     "drop": true,
-    "x": 700.0000076293945,
-    "y": 185.75000381469727,
+    "x": 970.2856903076172,
+    "y": 425.1428623199463,
     "wires": [
       [
-        "f8d65daf.bc78f",
-        "e9132194.36b34",
-        "7f7dc80a.853b78"
+        "3a5d5b33.d0f0f4",
+        "3b9c31dd.15b4de",
+        "334c31e0.bb681e"
       ]
     ]
   },
   {
-    "id": "62b44526.37e0ec",
+    "id": "209324b5.b67f5c",
     "type": "comment",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "INPUT OPENEVSE STATE (topic: state)",
-    "info": "## STATES\n\n- 1: Not Connected\n- 2: Connected\n- 3: Charging \n- 4-10: Error \n- 254: Sleeping\n- 255: Disabled",
-    "x": 210,
-    "y": 951,
+    "info": "## STATES\n\n- 1: Not Connected\n- 2: Connected\n- 3: Charging \n- 4-10: Error \n- 254: Sleeping (or 596?)\n- 255: Disabled\n\nState topic feedback is highly recomended to close the feedback loop",
+    "x": 1408,
+    "y": 45,
     "wires": []
   },
   {
-    "id": "38775660.36996a",
+    "id": "df51dacb.ae9d58",
     "type": "inject",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "DEBUG: Simulate 3: Charging",
     "topic": "state",
     "payload": "3",
@@ -381,18 +365,18 @@
     "repeat": "",
     "crontab": "",
     "once": false,
-    "x": 194,
-    "y": 1071,
+    "x": 1392,
+    "y": 165,
     "wires": [
       [
-        "4fd450ce.0cac3"
+        "57cc6a6b.55aab4"
       ]
     ]
   },
   {
-    "id": "1d1c0050.8ba79",
+    "id": "aca22425.2e5898",
     "type": "inject",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "DEBUG: Simulate  2: Connected",
     "topic": "state",
     "payload": "2",
@@ -400,18 +384,18 @@
     "repeat": "",
     "crontab": "",
     "once": false,
-    "x": 205,
-    "y": 1035,
+    "x": 1403,
+    "y": 129,
     "wires": [
       [
-        "4fd450ce.0cac3"
+        "57cc6a6b.55aab4"
       ]
     ]
   },
   {
-    "id": "87c4f9c.bd3ed08",
+    "id": "c26f096c.7f3028",
     "type": "inject",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "DEBUG: Simulate  254: Sleeping",
     "topic": "state",
     "payload": "254",
@@ -419,62 +403,60 @@
     "repeat": "",
     "crontab": "",
     "once": false,
-    "x": 203,
-    "y": 1107,
+    "x": 1401,
+    "y": 201,
     "wires": [
       [
-        "4fd450ce.0cac3"
+        "57cc6a6b.55aab4"
       ]
     ]
   },
   {
-    "id": "db295cde.368ca",
+    "id": "6c18a454.518a9c",
     "type": "function",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Set charging state",
     "func": "if (msg.topic === \"state\"){\n    global.set(\"state\",msg.payload);\n}\n\nreturn msg;\n",
     "outputs": 1,
     "noerr": 0,
-    "x": 665,
-    "y": 537,
+    "x": 1753,
+    "y": 201,
     "wires": [
-      [
-        "62d329e.5b49ad8"
-      ]
+      []
     ]
   },
   {
-    "id": "62d329e.5b49ad8",
+    "id": "c064cc0.bada138",
     "type": "debug",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "State debug",
     "active": false,
     "console": "false",
     "complete": "payload",
-    "x": 931,
-    "y": 587,
+    "x": 1203,
+    "y": 759,
     "wires": []
   },
   {
-    "id": "8294c938.daebe8",
+    "id": "d3107bd9.c0bbc8",
     "type": "mqtt in",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "",
     "topic": "emon/emonpi/vrms",
     "qos": "2",
-    "broker": "5524d7ef.a3d758",
-    "x": 235,
-    "y": 667,
+    "broker": "396670b0.0ef31",
+    "x": 247,
+    "y": 755,
     "wires": [
       [
-        "d96d6742.641378"
+        "bf6ea20c.3fa45"
       ]
     ]
   },
   {
-    "id": "d96d6742.641378",
+    "id": "bf6ea20c.3fa45",
     "type": "change",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "VRMS Input",
     "rules": [
       {
@@ -490,18 +472,19 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 438,
-    "y": 605,
+    "x": 466,
+    "y": 681,
     "wires": [
       [
-        "3dbaa5c4.dc9b3a"
+        "56840352.e3390c",
+        "59777a3a.3c7084"
       ]
     ]
   },
   {
-    "id": "fbf6db3e.617c78",
+    "id": "5c9c3727.2c7578",
     "type": "change",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Solar Input",
     "rules": [
       {
@@ -518,49 +501,50 @@
     "to": "",
     "reg": false,
     "x": 470,
-    "y": 224,
+    "y": 230,
     "wires": [
       [
-        "3dbaa5c4.dc9b3a"
+        "56840352.e3390c",
+        "11efd2c2.a8049d"
       ]
     ]
   },
   {
-    "id": "a8fa22c9.2a195",
+    "id": "ce619824.41b288",
     "type": "mqtt in",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "",
     "topic": "emon/emonpi/power1",
     "qos": "2",
-    "broker": "5524d7ef.a3d758",
-    "x": 239,
-    "y": 84,
+    "broker": "396670b0.0ef31",
+    "x": 251,
+    "y": 172,
     "wires": [
       [
-        "fbf6db3e.617c78"
+        "5c9c3727.2c7578"
       ]
     ]
   },
   {
-    "id": "ece63871.0bc0c8",
+    "id": "c9996957.2bc498",
     "type": "mqtt in",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "",
-    "topic": "emon/emonpi/power2",
+    "topic": "emon/emonpi/power1",
     "qos": "2",
-    "broker": "5524d7ef.a3d758",
-    "x": 216,
-    "y": 356,
+    "broker": "396670b0.0ef31",
+    "x": 228,
+    "y": 444,
     "wires": [
       [
-        "975b23a0.0ff0a"
+        "fe041018.18575"
       ]
     ]
   },
   {
-    "id": "975b23a0.0ff0a",
+    "id": "fe041018.18575",
     "type": "change",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Use Input",
     "rules": [
       {
@@ -576,34 +560,35 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 409,
-    "y": 449,
+    "x": 471,
+    "y": 507,
     "wires": [
       [
-        "3dbaa5c4.dc9b3a"
+        "56840352.e3390c",
+        "c87f89b6.9702f8"
       ]
     ]
   },
   {
-    "id": "63448e78.898c",
+    "id": "c21930db.d1878",
     "type": "mqtt in",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "",
     "topic": "openevse/mode",
     "qos": "2",
-    "broker": "5524d7ef.a3d758",
-    "x": 226,
-    "y": 779,
+    "broker": "396670b0.0ef31",
+    "x": 780,
+    "y": 101,
     "wires": [
       [
-        "72578929.c548e8"
+        "75506195.83d33"
       ]
     ]
   },
   {
-    "id": "72578929.c548e8",
+    "id": "75506195.83d33",
     "type": "change",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Mode Input",
     "rules": [
       {
@@ -619,34 +604,35 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 419,
-    "y": 783,
+    "x": 973,
+    "y": 105,
     "wires": [
       [
-        "2949e944.19fea6"
+        "b254b2ff.a580c",
+        "c2f7cdd1.bf709"
       ]
     ]
   },
   {
-    "id": "e307629d.b9216",
+    "id": "ff95379f.3e4d78",
     "type": "mqtt in",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "",
     "topic": "openevse/state",
     "qos": "2",
-    "broker": "5524d7ef.a3d758",
-    "x": 249,
-    "y": 988,
+    "broker": "396670b0.0ef31",
+    "x": 1447,
+    "y": 82,
     "wires": [
       [
-        "4fd450ce.0cac3"
+        "57cc6a6b.55aab4"
       ]
     ]
   },
   {
-    "id": "4fd450ce.0cac3",
+    "id": "57cc6a6b.55aab4",
     "type": "change",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "State Input",
     "rules": [
       {
@@ -662,161 +648,163 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 461,
-    "y": 978,
+    "x": 1659,
+    "y": 72,
     "wires": [
       [
-        "db295cde.368ca"
+        "6c18a454.518a9c",
+        "6b6189e.5870678"
       ]
     ]
   },
   {
-    "id": "5b8543e4.5a078c",
+    "id": "b95cdecb.03be5",
     "type": "comment",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "RAPI OUTPUT",
     "info": "\n\n## Output Options \n\n*Configure as appropriate*\n\n**ONLY USE ONE**\n\n### MQTT\n\n- emonPi MQTT server: \n- Username: `emonpimqtt` \n- Password: `emonpimqtt2016`\n- OpenEVSE MQTT topic:\n`base-topic>/rapi/in`\n- Assuming base topic = openevse\n`openevse/rapi/in`\n\n### HTTP\n\n- Enter OpeneEVSE IP address in generate HTTP RAPI function\n- Default host name is http://openevse\n\n### Direct serial \n\n- Via direct serial connection to OpenEVSE using USB to UART cable \n- Default baud 115200\n\nhttp://openevse.dozuki.com/Guide/Serial+Communications+with+OpenEVSE/13\n",
-    "x": 1252,
-    "y": 200,
+    "x": 1559.4286346435547,
+    "y": 373.14285469055176,
     "wires": []
   },
   {
-    "id": "f8d65daf.bc78f",
+    "id": "3a5d5b33.d0f0f4",
     "type": "function",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Generate RAPI MQTT",
     "func": "// OpenEVSE MQTT topic <base-topic>/rapi/in\n\nvar openevse_mqtt = \"openevse/rapi/in/\";\n\n// split on space\nvar output = msg.payload.split(\" \");\n \nvar rapi_message = output[0];\nvar rapi_payload = output[1];\n\n\nmsg.topic = openevse_mqtt + rapi_message;\nmsg.payload = rapi_payload;\n\nreturn [msg];\n\n\n\n",
     "outputs": 1,
     "noerr": 0,
-    "x": 912,
-    "y": 155,
+    "x": 1188,
+    "y": 331,
     "wires": [
       [
-        "49b3c0ad.5c0c6",
-        "bd6fa1c3.b3ab9",
-        "cb85dd5.5bc5e2"
+        "73a08d7c.b585a4",
+        "f16e2e86.2ce5e",
+        "4d31e21c.2f957c"
       ]
     ]
   },
   {
-    "id": "39e6dcc8.74b014",
+    "id": "859ba3d3.a0da5",
     "type": "http request",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "",
     "method": "GET",
     "ret": "txt",
-    "url": "",
-    "x": 1237.5,
-    "y": 309,
+    "url": "http://openevse/r?rapi=%24{{{payload}}}",
+    "tls": "",
+    "x": 1562.5,
+    "y": 480,
     "wires": [
       [
-        "c90bb934.f1ddc8"
+        "9240fbd2.5fa1a8"
       ]
     ]
   },
   {
-    "id": "e9132194.36b34",
+    "id": "3b9c31dd.15b4de",
     "type": "function",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Generate HTTP",
-    "func": "// Example: http://openevse/r?rapi=%24SC+13\n// Hostname openevse should work on most networks if running latest 2.0 firmware\n// Change openevse to local IP address if needed\n\nvar openevse_http = \"http://openevse/r?rapi=%\";\n\n// split on space\nvar output = msg.payload.split(\" \");\n \nvar rapi_message = output[0];\nvar rapi_payload = output[1];\n// remove $ symbol\nrapi_message = rapi_message.slice( 1 );\n\nif (rapi_payload){\n    msg.payload = openevse_http + rapi_message + \"+\" + rapi_payload;\n}\nelse{\n    // don't include value for RAPI commands with no value e.g FS\n    msg.payload = openevse_http + rapi_message;\n}\n\n\nreturn [msg];\n",
+    "func": "// Example: http://openevse/r?rapi=%24SC+13\n// Hostname openevse should work on most networks if running latest 2.0 firmware\n// Change openevse to local IP address if needed\n\n//var openevse_http = \"http://openevse/r?rapi=%\";\n\n// split on space\nvar output = msg.payload.split(\" \");\n \nvar rapi_message = output[0];\nvar rapi_payload = output[1];\n// remove $ symbol\nrapi_message = rapi_message.slice( 1 );\n\nif (rapi_payload){\n    //msg.payload = openevse_http + rapi_message + \"+\" + rapi_payload;\n    msg.payload = rapi_message + \"+\" + rapi_payload;\n}\nelse{\n    // don't include value for RAPI commands with no value e.g FS\n    //msg.payload = openevse_http + rapi_message;\n    msg.payload = rapi_message;\n}\n\n\nreturn [msg];\n",
     "outputs": 1,
     "noerr": 0,
-    "x": 926,
-    "y": 286,
+    "x": 1202,
+    "y": 462,
     "wires": [
       [
-        "aa02ed49.8e9a3"
+        "2786219d.bbd3ce"
       ]
     ]
   },
   {
-    "id": "49b3c0ad.5c0c6",
+    "id": "73a08d7c.b585a4",
     "type": "debug",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "DEBUG: MQTT rapi/in topic",
-    "active": false,
+    "active": true,
     "console": "false",
     "complete": "topic",
-    "x": 972,
-    "y": 192,
+    "x": 1248,
+    "y": 368,
     "wires": []
   },
   {
-    "id": "bd6fa1c3.b3ab9",
+    "id": "f16e2e86.2ce5e",
     "type": "debug",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "DEBUG: MQTT rapi/in message",
-    "active": false,
+    "active": true,
     "console": "false",
     "complete": "payload",
-    "x": 974,
-    "y": 227,
+    "x": 1250,
+    "y": 403,
     "wires": []
   },
   {
-    "id": "cb85dd5.5bc5e2",
+    "id": "4d31e21c.2f957c",
     "type": "mqtt out",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "",
     "topic": "",
     "qos": "",
     "retain": "",
-    "broker": "5524d7ef.a3d758",
-    "x": 1227,
-    "y": 248,
+    "broker": "396670b0.0ef31",
+    "x": 1545.8571701049805,
+    "y": 416.8571491241455,
     "wires": []
   },
   {
-    "id": "aa02ed49.8e9a3",
+    "id": "2786219d.bbd3ce",
     "type": "debug",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "DEUBG HTTP",
-    "active": true,
+    "active": false,
     "console": "false",
     "complete": "payload",
-    "x": 937,
-    "y": 322,
+    "x": 1213,
+    "y": 498,
     "wires": []
   },
   {
-    "id": "e2826c93.27ab4",
+    "id": "51298cf8.36cbd4",
     "type": "emoncms in",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Emoncms",
     "feedid": "",
-    "x": 282,
-    "y": 129,
+    "x": 294,
+    "y": 217,
     "wires": [
       []
     ]
   },
   {
-    "id": "44a22df8.f738c4",
+    "id": "6c9bdf84.b424e",
     "type": "serial out",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "",
     "serial": "25876359.564b1c",
-    "x": 1237.5,
-    "y": 391,
+    "x": 1559.5,
+    "y": 528,
     "wires": []
   },
   {
-    "id": "c90bb934.f1ddc8",
+    "id": "9240fbd2.5fa1a8",
     "type": "debug",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "HTTP responce",
-    "active": true,
+    "active": false,
     "console": "false",
     "complete": "payload",
-    "x": 1428,
-    "y": 290,
+    "x": 1777,
+    "y": 451,
     "wires": []
   },
   {
-    "id": "8cb82217.b6efa",
+    "id": "4558eb87.d5a494",
     "type": "inject",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Request update",
     "topic": "",
     "payload": "",
@@ -824,30 +812,30 @@
     "repeat": "30",
     "crontab": "",
     "once": true,
-    "x": 113,
-    "y": 129,
+    "x": 125,
+    "y": 217,
     "wires": [
       [
-        "e2826c93.27ab4"
+        "51298cf8.36cbd4"
       ]
     ]
   },
   {
-    "id": "f4e17bc.2462a88",
+    "id": "22e1491a.0d9dd6",
     "type": "emoncms in",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Emoncms",
     "feedid": "",
-    "x": 269,
-    "y": 405,
+    "x": 281,
+    "y": 493,
     "wires": [
       []
     ]
   },
   {
-    "id": "8c90922b.eb85b",
+    "id": "69178911.729408",
     "type": "inject",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Request update",
     "topic": "",
     "payload": "",
@@ -855,30 +843,30 @@
     "repeat": "30",
     "crontab": "",
     "once": true,
-    "x": 100,
-    "y": 405,
+    "x": 112,
+    "y": 493,
     "wires": [
       [
-        "f4e17bc.2462a88"
+        "22e1491a.0d9dd6"
       ]
     ]
   },
   {
-    "id": "47b31678.77fde8",
+    "id": "e60b5b3f.bd47e8",
     "type": "emoncms in",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Emoncms",
     "feedid": "",
-    "x": 264,
-    "y": 624,
+    "x": 276,
+    "y": 712,
     "wires": [
       []
     ]
   },
   {
-    "id": "cd0e25eb.c43848",
+    "id": "be8367e2.50e668",
     "type": "inject",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Request update",
     "topic": "",
     "payload": "",
@@ -886,47 +874,113 @@
     "repeat": "30",
     "crontab": "",
     "once": true,
-    "x": 95,
-    "y": 619,
+    "x": 107,
+    "y": 707,
     "wires": [
       [
-        "47b31678.77fde8"
+        "e60b5b3f.bd47e8"
       ]
     ]
   },
   {
-    "id": "7f7dc80a.853b78",
+    "id": "334c31e0.bb681e",
     "type": "function",
-    "z": "748c9597.a3803c",
+    "z": "183b477c.1c6f49",
     "name": "Generate Serial",
     "func": "return msg;\n",
     "outputs": 1,
     "noerr": 0,
-    "x": 943,
-    "y": 388,
+    "x": 1219,
+    "y": 564,
     "wires": [
       []
     ]
   },
   {
-    "id": "59e19785.f166c8",
-    "type": "rbe",
-    "z": "748c9597.a3803c",
+    "id": "11efd2c2.a8049d",
+    "type": "debug",
+    "z": "183b477c.1c6f49",
+    "name": "DEBUG: Solar input",
+    "active": false,
+    "console": "false",
+    "complete": "payload",
+    "x": 510.640625,
+    "y": 284.9296875,
+    "wires": []
+  },
+  {
+    "id": "c87f89b6.9702f8",
+    "type": "debug",
+    "z": "183b477c.1c6f49",
+    "name": "DEBUG: Use input",
+    "active": false,
+    "console": "false",
+    "complete": "payload",
+    "x": 532.63671875,
+    "y": 573.94140625,
+    "wires": []
+  },
+  {
+    "id": "c2f7cdd1.bf709",
+    "type": "debug",
+    "z": "183b477c.1c6f49",
+    "name": "Debug: Mode input",
+    "active": true,
+    "console": "false",
+    "complete": "payload",
+    "x": 1100.640625,
+    "y": 144.9296875,
+    "wires": []
+  },
+  {
+    "id": "59777a3a.3c7084",
+    "type": "debug",
+    "z": "183b477c.1c6f49",
+    "name": "DEBUG: VRMS input",
+    "active": false,
+    "console": "false",
+    "complete": "payload",
+    "x": 549.62890625,
+    "y": 743.18359375,
+    "wires": []
+  },
+  {
+    "id": "6b6189e.5870678",
+    "type": "debug",
+    "z": "183b477c.1c6f49",
+    "name": "DEBUG: State input",
+    "active": true,
+    "console": "false",
+    "complete": "payload",
+    "x": 1803.6328125,
+    "y": 149.18359375,
+    "wires": []
+  },
+  {
+    "id": "9f694c75.9c924",
+    "type": "delay",
+    "z": "183b477c.1c6f49",
     "name": "",
-    "func": "deadband",
-    "gap": "2",
-    "start": "",
-    "inout": "out",
-    "x": 682.9167556762695,
-    "y": 336.6666922569275,
+    "pauseType": "rate",
+    "timeout": "5",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "5",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": true,
+    "x": 908.5714285714284,
+    "y": 570,
     "wires": [
       [
-        "9911b61f.85b9b8"
+        "5c69777e.0dc8b8"
       ]
     ]
   },
   {
-    "id": "5524d7ef.a3d758",
+    "id": "396670b0.0ef31",
     "type": "mqtt-broker",
     "z": "",
     "broker": "localhost",
@@ -945,5 +999,19 @@
     "birthQos": "0",
     "birthRetain": "false",
     "birthPayload": ""
+  },
+  {
+    "id": "25876359.564b1c",
+    "type": "serial-port",
+    "z": "",
+    "serialport": "/dev/ttyUSB0",
+    "serialbaud": "115200",
+    "databits": "8",
+    "parity": "none",
+    "stopbits": "1",
+    "newline": "\n",
+    "bin": "false",
+    "out": "char",
+    "addchar": true
   }
 ]
