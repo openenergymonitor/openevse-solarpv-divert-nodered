@@ -1,5 +1,7 @@
 NodeRED flow for OpenEVSE EV charging station solar PV diversion
 
+**UPDATE: This functionality in a more user friendly form has now been included in the [OpenEVSE ESP WiFi V2 Firmware](github.com/OpenEVSE/ESP8266_WiFi_v2.x)**
+
 # Charging Modes
 
 ## 1: Normal Fast Charge (default)
