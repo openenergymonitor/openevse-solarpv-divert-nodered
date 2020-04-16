@@ -1,10 +1,5 @@
 [
     {
-        "id": "d9a2c83c.768eb8",
-        "type": "tab",
-        "label": "Flow 2"
-    },
-    {
         "id": "fe39bdf.62f684",
         "type": "mqtt in",
         "z": "d9a2c83c.768eb8",
@@ -12,11 +7,12 @@
         "topic": "openevse/divertmode",
         "qos": "2",
         "broker": "58f2d955.339118",
-        "x": 320,
-        "y": 260,
+        "x": 380,
+        "y": 800,
         "wires": [
             [
-                "87df03ac.ebcc8"
+                "87df03ac.ebcc8",
+                "58c4af7e.71206"
             ]
         ]
     },
@@ -28,12 +24,11 @@
         "topic": "openevse/amp",
         "qos": "2",
         "broker": "58f2d955.339118",
-        "x": 200,
-        "y": 400,
+        "x": 120,
+        "y": 180,
         "wires": [
             [
-                "bc824c6.40c7cb",
-                "16f2dff8.9278f"
+                "97300dce.7ff22"
             ]
         ]
     },
@@ -45,8 +40,8 @@
         "topic": "openevse/temp1",
         "qos": "2",
         "broker": "58f2d955.339118",
-        "x": 300,
-        "y": 860,
+        "x": 1040,
+        "y": 300,
         "wires": [
             [
                 "bac0f91a.58b3e8"
@@ -61,8 +56,8 @@
         "topic": "openevse/pilot",
         "qos": "2",
         "broker": "58f2d955.339118",
-        "x": 190,
-        "y": 320,
+        "x": 170,
+        "y": 80,
         "wires": [
             [
                 "bc824c6.40c7cb"
@@ -77,8 +72,8 @@
         "topic": "openevse/state",
         "qos": "2",
         "broker": "58f2d955.339118",
-        "x": 300,
-        "y": 740,
+        "x": 1040,
+        "y": 180,
         "wires": [
             [
                 "45d8f422.2a208c"
@@ -93,8 +88,8 @@
         "topic": "openevse/freeram",
         "qos": "2",
         "broker": "58f2d955.339118",
-        "x": 310,
-        "y": 800,
+        "x": 1050,
+        "y": 240,
         "wires": [
             [
                 "d85d9c56.98adc"
@@ -109,13 +104,12 @@
         "topic": "emon/test/solar",
         "qos": "2",
         "broker": "58f2d955.339118",
-        "x": 300,
-        "y": 560,
+        "x": 320,
+        "y": 260,
         "wires": [
             [
                 "c2ebd7bb.e27e18",
-                "91fd7ade.cb2458",
-                "bb8fc293.6e11b"
+                "91fd7ade.cb2458"
             ]
         ]
     },
@@ -127,8 +121,8 @@
         "topic": "emon/test/grid_ie",
         "qos": "2",
         "broker": "58f2d955.339118",
-        "x": 300,
-        "y": 620,
+        "x": 320,
+        "y": 320,
         "wires": [
             [
                 "c2ebd7bb.e27e18",
@@ -138,29 +132,16 @@
         ]
     },
     {
-        "id": "853561ad.d3465",
-        "type": "mqtt out",
-        "z": "d9a2c83c.768eb8",
-        "name": "",
-        "topic": "emon/test/solar",
-        "qos": "",
-        "retain": "",
-        "broker": "58f2d955.339118",
-        "x": 860,
-        "y": 560,
-        "wires": []
-    },
-    {
         "id": "c027b0e2.16a6b",
         "type": "mqtt out",
         "z": "d9a2c83c.768eb8",
         "name": "",
-        "topic": "openevse/divertmode",
+        "topic": "openevse/divertmode/set",
         "qos": "",
         "retain": "",
         "broker": "58f2d955.339118",
-        "x": 880,
-        "y": 260,
+        "x": 950,
+        "y": 800,
         "wires": []
     },
     {
@@ -171,27 +152,13 @@
         "topic": "emon/test/consumption",
         "qos": "2",
         "broker": "58f2d955.339118",
-        "x": 320,
-        "y": 680,
+        "x": 340,
+        "y": 380,
         "wires": [
             [
-                "c2ebd7bb.e27e18",
-                "bd4c6bb3.daee88"
+                "c2ebd7bb.e27e18"
             ]
         ]
-    },
-    {
-        "id": "cab53e5a.36963",
-        "type": "mqtt out",
-        "z": "d9a2c83c.768eb8",
-        "name": "",
-        "topic": "emon/test/consumption",
-        "qos": "",
-        "retain": "",
-        "broker": "58f2d955.339118",
-        "x": 890,
-        "y": 680,
-        "wires": []
     },
     {
         "id": "87df03ac.ebcc8",
@@ -215,8 +182,8 @@
         "offvalueType": "num",
         "officon": "",
         "offcolor": "",
-        "x": 590,
-        "y": 260,
+        "x": 650,
+        "y": 800,
         "wires": [
             [
                 "c027b0e2.16a6b"
@@ -257,8 +224,8 @@
             "#9467bd",
             "#c5b0d5"
         ],
-        "x": 600,
-        "y": 320,
+        "x": 620,
+        "y": 80,
         "wires": [
             [],
             []
@@ -298,8 +265,8 @@
             "#9467bd",
             "#c5b0d5"
         ],
-        "x": 590,
-        "y": 500,
+        "x": 650,
+        "y": 260,
         "wires": [
             [],
             []
@@ -339,8 +306,8 @@
             "#9467bd",
             "#c5b0d5"
         ],
-        "x": 660,
-        "y": 420,
+        "x": 720,
+        "y": 200,
         "wires": [
             [],
             []
@@ -380,8 +347,8 @@
             "#9467bd",
             "#c5b0d5"
         ],
-        "x": 610,
-        "y": 800,
+        "x": 1350,
+        "y": 240,
         "wires": [
             [],
             []
@@ -421,8 +388,8 @@
             "#9467bd",
             "#c5b0d5"
         ],
-        "x": 600,
-        "y": 860,
+        "x": 1340,
+        "y": 300,
         "wires": [
             [],
             []
@@ -504,8 +471,8 @@
         ],
         "payload": "",
         "topic": "",
-        "x": 590,
-        "y": 740,
+        "x": 1330,
+        "y": 180,
         "wires": [
             []
         ]
@@ -517,19 +484,20 @@
         "name": "",
         "label": "Solar",
         "group": "f2b3d20.7bc8a3",
-        "order": 0,
-        "width": 0,
-        "height": 0,
+        "order": 1,
+        "width": "5",
+        "height": "1",
         "passthru": false,
-        "topic": "",
+        "topic": "set/solar",
         "min": 0,
         "max": "3000",
         "step": 1,
-        "x": 590,
-        "y": 560,
+        "x": 430,
+        "y": 660,
         "wires": [
             [
-                "853561ad.d3465"
+                "d8d0743a.33a358",
+                "75e74c2e.037bc4"
             ]
         ]
     },
@@ -540,19 +508,20 @@
         "name": "",
         "label": "Consumption",
         "group": "f2b3d20.7bc8a3",
-        "order": 0,
-        "width": 0,
-        "height": 0,
+        "order": 3,
+        "width": "5",
+        "height": "1",
         "passthru": false,
-        "topic": "",
+        "topic": "set/consumption",
         "min": 0,
         "max": "4000",
         "step": 1,
-        "x": 610,
-        "y": 680,
+        "x": 410,
+        "y": 540,
         "wires": [
             [
-                "cab53e5a.36963"
+                "d8d0743a.33a358",
+                "3b32f378.d568ac"
             ]
         ]
     },
@@ -564,8 +533,8 @@
         "func": "msg.payload /= 10;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 470,
-        "y": 860,
+        "x": 1210,
+        "y": 300,
         "wires": [
             [
                 "f8d0c626.597878"
@@ -580,45 +549,11 @@
         "func": "msg.payload /= 1024.0;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 470,
-        "y": 800,
+        "x": 1210,
+        "y": 240,
         "wires": [
             [
                 "e57a3ac8.b80518"
-            ]
-        ]
-    },
-    {
-        "id": "c16b5db3.9747f",
-        "type": "mqtt in",
-        "z": "d9a2c83c.768eb8",
-        "name": "",
-        "topic": "emon/test/solar",
-        "qos": "2",
-        "broker": "58f2d955.339118",
-        "x": 280,
-        "y": 1180,
-        "wires": [
-            [
-                "d8d0743a.33a358",
-                "fd325f8.c3639a"
-            ]
-        ]
-    },
-    {
-        "id": "c244977c.9a84f8",
-        "type": "mqtt in",
-        "z": "d9a2c83c.768eb8",
-        "name": "",
-        "topic": "emon/test/consumption",
-        "qos": "2",
-        "broker": "58f2d955.339118",
-        "x": 300,
-        "y": 1060,
-        "wires": [
-            [
-                "d8d0743a.33a358",
-                "fd325f8.c3639a"
             ]
         ]
     },
@@ -627,24 +562,24 @@
         "type": "mqtt out",
         "z": "d9a2c83c.768eb8",
         "name": "",
-        "topic": "emon/test/grid_ie",
+        "topic": "",
         "qos": "",
         "retain": "",
         "broker": "58f2d955.339118",
-        "x": 730,
-        "y": 1060,
+        "x": 950,
+        "y": 560,
         "wires": []
     },
     {
         "id": "d8d0743a.33a358",
         "type": "function",
         "z": "d9a2c83c.768eb8",
-        "name": "",
-        "func": "context.set(msg.topic, msg.payload);\n\nfunction toInt(v) {\n    if(typeof v === 'number') {\n        return v;\n    }\n    \n    return parseInt(v);\n}\n\nvar solar = toInt(context.get(\"emon/test/solar\")) || 0;\nvar consumption = toInt(context.get(\"emon/test/consumption\")) || 0;\nvar amp = toInt(context.get(\"openevse/amp\")) || 0;\nvar power = 240 * amp;\n\nreturn { payload: ((consumption + power) - solar) };\n",
+        "name": "emonPi Simulator",
+        "func": "function toInt(v) {\n    if(typeof v === 'number') {\n        return v;\n    }\n    \n    return parseInt(v);\n}\n\nif(\"timer\" === msg.topic)\n{\n    var solar = toInt(context.get(\"set/solar\")) || 0;\n    var consumption = toInt(context.get(\"set/consumption\")) || 0;\n    var power = toInt(context.get(\"openevse/power\")) || 0;\n    return [[\n        { topic: \"emon/test/solar\", payload: solar },\n        { topic: \"emon/test/consumption\", payload: consumption + power },\n        { topic: \"emon/test/grid_ie\", payload: ((consumption + power) - solar) }\n    ]];\n}\nelse \n{\n    context.set(msg.topic, msg.payload);\n\n    return null;\n}",
         "outputs": 1,
         "noerr": 0,
-        "x": 530,
-        "y": 1060,
+        "x": 690,
+        "y": 600,
         "wires": [
             [
                 "78b16139.bafd4",
@@ -653,32 +588,15 @@
         ]
     },
     {
-        "id": "24233308.ac734c",
-        "type": "mqtt in",
-        "z": "d9a2c83c.768eb8",
-        "name": "",
-        "topic": "openevse/amp",
-        "qos": "2",
-        "broker": "58f2d955.339118",
-        "x": 280,
-        "y": 1120,
-        "wires": [
-            [
-                "d8d0743a.33a358",
-                "fd325f8.c3639a"
-            ]
-        ]
-    },
-    {
         "id": "b75e91cc.c520e",
         "type": "debug",
         "z": "d9a2c83c.768eb8",
         "name": "",
-        "active": true,
+        "active": false,
         "console": "false",
         "complete": "false",
-        "x": 710,
-        "y": 1120,
+        "x": 970,
+        "y": 620,
         "wires": []
     },
     {
@@ -687,12 +605,12 @@
         "z": "d9a2c83c.768eb8",
         "name": "",
         "group": "f2b3d20.7bc8a3",
-        "order": 0,
+        "order": 5,
         "width": 0,
         "height": 0,
         "gtype": "gage",
         "title": "Grid IE",
-        "label": "units",
+        "label": "W",
         "format": "{{value}}",
         "min": "-3000",
         "max": "10000",
@@ -703,35 +621,175 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 593.1000366210938,
-        "y": 615.2000122070312,
-        "wires": []
-    },
-    {
-        "id": "fd325f8.c3639a",
-        "type": "debug",
-        "z": "d9a2c83c.768eb8",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 513.1000366210938,
-        "y": 1160.4000244140625,
+        "x": 653.1000366210938,
+        "y": 315.20001220703125,
         "wires": []
     },
     {
         "id": "16f2dff8.9278f",
         "type": "function",
         "z": "d9a2c83c.768eb8",
-        "name": "",
+        "name": "to Watts",
         "func": "msg.topic = \"openevse/power\";\nmsg.payload *= 240;\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 370,
-        "y": 420,
+        "x": 480,
+        "y": 180,
         "wires": [
             [
-                "91fd7ade.cb2458"
+                "91fd7ade.cb2458",
+                "993760e9.18dc2"
+            ]
+        ]
+    },
+    {
+        "id": "5e9e5f0e.4f17f",
+        "type": "inject",
+        "z": "d9a2c83c.768eb8",
+        "name": "",
+        "topic": "timer",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "x": 390,
+        "y": 580,
+        "wires": [
+            [
+                "d8d0743a.33a358"
+            ]
+        ]
+    },
+    {
+        "id": "97300dce.7ff22",
+        "type": "function",
+        "z": "d9a2c83c.768eb8",
+        "name": "to Amps",
+        "func": "msg.payload /= 1000.0;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 300,
+        "y": 180,
+        "wires": [
+            [
+                "bc824c6.40c7cb",
+                "16f2dff8.9278f",
+                "498b1954.f18f38"
+            ]
+        ]
+    },
+    {
+        "id": "993760e9.18dc2",
+        "type": "link out",
+        "z": "d9a2c83c.768eb8",
+        "name": "power",
+        "links": [
+            "7a54cbe3.381114"
+        ],
+        "x": 615,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7a54cbe3.381114",
+        "type": "link in",
+        "z": "d9a2c83c.768eb8",
+        "name": "",
+        "links": [
+            "993760e9.18dc2"
+        ],
+        "x": 455,
+        "y": 620,
+        "wires": [
+            [
+                "d8d0743a.33a358"
+            ]
+        ]
+    },
+    {
+        "id": "75e74c2e.037bc4",
+        "type": "ui_text",
+        "z": "d9a2c83c.768eb8",
+        "group": "f2b3d20.7bc8a3",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "name": "Solar Value",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 670,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "3b32f378.d568ac",
+        "type": "ui_text",
+        "z": "d9a2c83c.768eb8",
+        "group": "f2b3d20.7bc8a3",
+        "order": 4,
+        "width": "1",
+        "height": "1",
+        "name": "Consumption Value",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 690,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "498b1954.f18f38",
+        "type": "ui_gauge",
+        "z": "d9a2c83c.768eb8",
+        "name": "Charge",
+        "group": "f2b3d20.7bc8a3",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Charge",
+        "label": "A",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 620,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "58c4af7e.71206",
+        "type": "debug",
+        "z": "d9a2c83c.768eb8",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 670,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "553f9b67.1209d4",
+        "type": "mqtt in",
+        "z": "d9a2c83c.768eb8",
+        "name": "",
+        "topic": "openevse/divertmode/set",
+        "qos": "2",
+        "broker": "58f2d955.339118",
+        "x": 390,
+        "y": 880,
+        "wires": [
+            [
+                "58c4af7e.71206"
             ]
         ]
     },
